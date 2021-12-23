@@ -5,16 +5,16 @@ import java.lang.annotation.Annotation;
 import java.lang.reflect.Field;
 import java.util.Properties;
 /** 
- * Класс для поиска AutoInjectable полей в любом классе
- * @author Суховеркова Екатерина (3 курс 3 группа)
+ * РљР»Р°СЃСЃ РґР»СЏ РїРѕРёСЃРєР° AutoInjectable РїРѕР»РµР№ РІ Р»СЋР±РѕРј РєР»Р°СЃСЃРµ
+ * @author РЎСѓС…РѕРІРµСЂРєРѕРІР° Р•РєР°С‚РµСЂРёРЅР° (3 РєСѓСЂСЃ 3 РіСЂСѓРїРїР°)
 */
 public class Injector {
-	/** Поле с путём к файлу properties */
+	/** РџРѕР»Рµ СЃ РїСѓС‚С‘Рј Рє С„Р°Р№Р»Сѓ properties */
 	public static final String path = "SomeBean.properties";
 	/**
-     * Метод поиска AutoInjectable полей
-     * @param obj - объект любого класса
-     * @return возвращает объект этого же класса с инициализированными полями
+     * РњРµС‚РѕРґ РїРѕРёСЃРєР° AutoInjectable РїРѕР»РµР№
+     * @param obj - РѕР±СЉРµРєС‚ Р»СЋР±РѕРіРѕ РєР»Р°СЃСЃР°
+     * @return РІРѕР·РІСЂР°С‰Р°РµС‚ РѕР±СЉРµРєС‚ СЌС‚РѕРіРѕ Р¶Рµ РєР»Р°СЃСЃР° СЃ РёРЅРёС†РёР°Р»РёР·РёСЂРѕРІР°РЅРЅС‹РјРё РїРѕР»СЏРјРё
      */
 	@SuppressWarnings("deprecation")
 	public <T> T inject(T obj) throws IllegalArgumentException, IllegalAccessException, InstantiationException, ClassNotFoundException {
@@ -30,7 +30,7 @@ public class Injector {
 					String className = prop.getProperty(f.getType().toString().replace("interface ", ""));
 					f.set(obj, Class.forName(className).newInstance());
 		        } catch (IOException e) {
-		            System.out.println("Ошибка открытия файла: " + path);
+		            System.out.println("РћС€РёР±РєР° РѕС‚РєСЂС‹С‚РёСЏ С„Р°Р№Р»Р°: " + path);
 		            e.printStackTrace();
 		        }
 			}
