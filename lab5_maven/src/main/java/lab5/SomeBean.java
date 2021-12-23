@@ -1,23 +1,23 @@
 package lab5;
-/** Интерфейс doSomething() */
+/** РРЅС‚РµСЂС„РµР№СЃ doSomething() */
 interface SomeInterface{ public void doSomething(); }
-/** Интерфейс doSomeOther() */
+/** РРЅС‚РµСЂС„РµР№СЃ doSomeOther() */
 interface SomeOtherInterface{ public void doSomeOther(); }
-/** Класс реализующий {@link SomeInterface#doSomething} как печать "A" */
+/** РљР»Р°СЃСЃ СЂРµР°Р»РёР·СѓСЋС‰РёР№ {@link SomeInterface#doSomething} РєР°Рє РїРµС‡Р°С‚СЊ "A" */
 class SomeImpl implements SomeInterface{
 	public void doSomething(){ System.out.println("A"); }
 }
-/** Класс реализующий {@link SomeInterface#doSomething} как печать "B" */
+/** РљР»Р°СЃСЃ СЂРµР°Р»РёР·СѓСЋС‰РёР№ {@link SomeInterface#doSomething} РєР°Рє РїРµС‡Р°С‚СЊ "B" */
 class OtherImpl implements SomeInterface{
 	public void doSomething(){ System.out.println("B"); }
 }
-/** Класс реализующий {@link SomeOtherInterface#doSomeOther} как печать "C" */
+/** РљР»Р°СЃСЃ СЂРµР°Р»РёР·СѓСЋС‰РёР№ {@link SomeOtherInterface#doSomeOther} РєР°Рє РїРµС‡Р°С‚СЊ "C" */
 class SODoer implements SomeOtherInterface{
 	public void doSomeOther(){ System.out.println("C"); }
 }
 /** 
- * Класс с AutoInjectable полями
- * @author Суховеркова Екатерина (3 курс 3 группа)
+ * РљР»Р°СЃСЃ СЃ AutoInjectable РїРѕР»СЏРјРё
+ * @author РЎСѓС…РѕРІРµСЂРєРѕРІР° Р•РєР°С‚РµСЂРёРЅР° (3 РєСѓСЂСЃ 3 РіСЂСѓРїРїР°)
 */
 class SomeBean{
 	@AutoInjectable
@@ -26,7 +26,7 @@ class SomeBean{
 	private SomeOtherInterface field2;
 	public SomeInterface field3 = new SomeImpl();
 	/**
-     * Метод вызова функций полей
+     * РњРµС‚РѕРґ РІС‹Р·РѕРІР° С„СѓРЅРєС†РёР№ РїРѕР»РµР№
      */
 	public void foo(){
 		field1.doSomething();
